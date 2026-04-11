@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ripple Support</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      background: #0d0f14;
+      color: #fff;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 24px;
+    }
+
+    .card {
+      max-width: 480px;
+      width: 100%;
+      text-align: center;
+    }
+
+    .icon {
+      margin-bottom: 12px;
+    }
+
+    .icon img {
+      width: 64px;
+      height: 64px;
+      object-fit: contain;
+    }
+
+    h1 {
+      font-size: 28px;
+      font-weight: 600;
+      margin-bottom: 10px;
+      color: #fff;
+    }
+
+    .tagline {
+      font-size: 16px;
+      color: rgba(255,255,255,0.45);
+      margin-bottom: 48px;
+      line-height: 1.6;
+    }
+
+    .section {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 16px;
+      padding: 24px;
+      margin-bottom: 16px;
+      text-align: left;
+    }
+
+    .section h2 {
+      font-size: 13px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: rgba(255,255,255,0.3);
+      margin-bottom: 16px;
+    }
+
+    .faq-item {
+      margin-bottom: 20px;
+    }
+
+    .faq-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .faq-item strong {
+      display: block;
+      font-size: 15px;
+      color: rgba(255,255,255,0.9);
+      margin-bottom: 6px;
+    }
+
+    .faq-item p {
+      font-size: 14px;
+      color: rgba(255,255,255,0.45);
+      line-height: 1.6;
+    }
+
+    .discord-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: #5865F2;
+      color: #fff;
+      text-decoration: none;
+      font-size: 16px;
+      font-weight: 600;
+      padding: 16px 32px;
+      border-radius: 50px;
+      margin-top: 8px;
+      transition: opacity 0.2s;
+    }
+
+    .discord-btn:hover {
+      opacity: 0.85;
+    }
+
+    .discord-btn svg {
+      width: 22px;
+      height: 22px;
+      fill: #fff;
+    }
+
+    .support-note {
+      font-size: 13px;
+      color: rgba(255,255,255,0.25);
+      margin-top: 48px;
+      line-height: 1.6;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="icon"><img src="data:image/png;base64,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" alt="Ripple" /></div>
+    <h1>Ripple Support</h1>
+    <p class="tagline">The screen time app that asks why — not just blocks.</p>
+
+    <div class="section">
+      <h2>Frequently Asked Questions</h2>
+
+      <div class="faq-item">
+        <strong>Why isn't the block screen appearing?</strong>
+        <p>Make sure Screen Time permission was granted during onboarding. Go to Settings → Screen Time → and verify Ripple has access.</p>
+      </div>
+
+      <div class="faq-item">
+        <strong>Why didn't I get a notification when I hit my limit?</strong>
+        <p>Notifications need to be enabled for Ripple. Go to Settings → Notifications → Ripple and make sure they're turned on.</p>
+      </div>
+
+      <div class="faq-item">
+        <strong>What's included in the free tier?</strong>
+        <p>Unlimited app and category blocking is free forever. Ripple Pro adds mindful interventions — the feeling check, activity suggestions, and pattern tracking.</p>
+      </div>
+
+      <div class="faq-item">
+        <strong>How do I cancel my subscription?</strong>
+        <p>Go to Settings → Apple ID → Subscriptions → Ripple Pro → Cancel.</p>
+      </div>
+
+      <div class="faq-item">
+        <strong>My question isn't here.</strong>
+        <p>Join our Discord — we're happy to help.</p>
+      </div>
+    </div>
+
+    <div class="section" style="text-align:center;">
+      <h2>Get Help</h2>
+      <p style="font-size:14px; color:rgba(255,255,255,0.45); margin-bottom:20px; line-height:1.6;">
+        For bug reports, feature requests, or anything else — join the Ripple community on Discord.
+      </p>
+      <a class="discord-btn" href="https://discord.gg/8danJWr2yg" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028 14.09 14.09 0 0 0 1.226-1.994.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03z"/>
+        </svg>
+        Join Discord
+      </a>
+    </div>
+
+    <p class="support-note">Ripple is made by an independent developer.<br>We read every message and respond as quickly as we can.</p>
+  </div>
+</body>
+</html>
